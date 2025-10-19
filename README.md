@@ -1,2 +1,321 @@
 # resume
 resume
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Roy Tsay — Resume</title>
+
+  <!-- Basic styles (self-contained) -->
+  <style>
+    :root{
+      --accent:#2563eb;
+      --muted:#6b7280;
+      --bg:#f8fafc;
+      --card:#ffffff;
+      --maxw:900px;
+      --pad:20px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color:#111827;
+    }
+    html,body{height:100%;}
+    body{
+      margin:0;
+      padding:24px;
+      background:linear-gradient(180deg,#f8fafc 0%, #eef2ff 100%);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+      min-height:100vh;
+    }
+
+    .sheet{
+      width:100%;
+      max-width:var(--maxw);
+      background:var(--card);
+      border-radius:12px;
+      box-shadow:0 8px 30px rgba(2,6,23,0.08);
+      padding:24px;
+      display:grid;
+      grid-template-columns: 1fr 320px;
+      gap:20px;
+    }
+
+    header{
+      grid-column:1 / -1;
+      display:flex;
+      gap:16px;
+      align-items:center;
+      margin-bottom:8px;
+    }
+    .photo{
+      width:88px;
+      height:88px;
+      border-radius:8px;
+      background:linear-gradient(135deg,#c7d2fe,#efefef);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      color:#fff;
+      font-size:14px;
+      flex-shrink:0;
+      overflow:hidden;
+    }
+    .head-info h1{
+      margin:0;
+      font-size:20px;
+      letter-spacing:-0.2px;
+    }
+    .head-info .meta{
+      margin-top:6px;
+      color:var(--muted);
+      font-size:13px;
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+
+    .content{
+      padding-right:4px;
+    }
+
+    .sidebar{
+      background:linear-gradient(180deg,#fff,#fbfdff);
+      border-radius:8px;
+      padding:14px;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,0.6);
+      height:fit-content;
+    }
+
+    h2{
+      font-size:13px;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      margin:0 0 12px 0;
+      color:var(--muted);
+    }
+
+    .summary{
+      margin-bottom:14px;
+      font-size:14px;
+      color:#111827;
+      line-height:1.45;
+    }
+
+    .skills-list, .cert-list, .lang-list, .interests-list {
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+    .chip{
+      background:#f3f4f6;
+      border-radius:999px;
+      padding:6px 10px;
+      font-size:13px;
+      color:#111827;
+    }
+
+    .section{margin-bottom:18px;}
+    .job{
+      margin-bottom:12px;
+    }
+    .job .title{
+      font-weight:600;
+      font-size:15px;
+    }
+    .job .meta{
+      color:var(--muted);
+      font-size:13px;
+      margin-bottom:6px;
+    }
+    .job ul{margin:6px 0 0 18px;padding:0;color:#374151;font-size:14px;line-height:1.5;}
+    a.inline{
+      color:var(--accent);
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    /* small screens */
+    @media (max-width:880px){
+      .sheet{grid-template-columns:1fr; padding:18px;}
+      .sidebar{order:2;}
+      header{flex-direction:row; align-items:center;}
+    }
+
+    /* Print rules to make PDF clean */
+    @media print {
+      body{background:transparent; padding:0;}
+      .sheet{box-shadow:none; border-radius:0; max-width:100%; width:100%;}
+      .sidebar{display:block;}
+      .no-print{display:none;}
+    }
+
+    /* Utility */
+    .muted{color:var(--muted); font-size:13px;}
+    .download-btn{
+      display:inline-block;
+      margin-left:auto;
+      background:var(--accent);
+      color:white;
+      padding:8px 12px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:600;
+      font-size:13px;
+    }
+  </style>
+</head>
+<body>
+  <div class="sheet" role="main">
+
+    <header>
+      <div class="photo" aria-hidden="true">
+        <!-- initials fallback — replace with <img src="..."> if you have a picture -->
+        RT
+      </div>
+
+      <div class="head-info">
+        <h1>Roy Tsay <span class="muted" style="font-weight:500; font-size:14px;">• 2025/Sep/21</span></h1>
+        <div class="meta">
+          <span>Job Title / Specialization</span>
+          <span>📍 City, Country</span>
+          <span>you@example.com</span>
+          <span>+1 234 567 890</span>
+          <span><a class="inline" href="#" target="_blank" rel="noopener">LinkedIn</a></span>
+          <span><a class="inline" href="#" target="_blank" rel="noopener">GitHub</a></span>
+          <span class="no-print"><a class="download-btn" href="#" onclick="window.print();return false;">Download / Print PDF</a></span>
+        </div>
+      </div>
+    </header>
+
+    <div class="content">
+      <section class="section">
+        <h2>Profile</h2>
+        <p class="summary">
+          Concise 2–3 sentence summary highlighting your core strengths, years of experience, domains, and the impact you deliver.
+          Example: Front-end developer with 5+ years building accessible, high-performance web apps; specialized in React and TypeScript with a track record of shipping user-loved features.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2>Experience</h2>
+
+        <div class="job">
+          <div class="title">Senior Front-End Engineer <span class="muted">— Acme Corp • San Francisco, CA • 2022 – Present</span></div>
+          <ul>
+            <li>Led the redesign of the customer dashboard (React + TypeScript), improving task completion time by 28%.</li>
+            <li>Introduced a shared component library and accessibility guidelines, reducing UI defects by 40%.</li>
+            <li>Mentored 4 developers; established CI checks for performance budgets and a11y.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="title">Front-End Engineer <span class="muted">— StartupXYZ • Remote • 2020 – 2022</span></div>
+          <ul>
+            <li>Built a real-time analytics console using Next.js and WebSockets; brought page TTI below 1.5s.</li>
+            <li>Collaborated with designers to add dark mode and theming; boosted retention by 12%.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="title">Web Developer (Intern) <span class="muted">— Bright Agency • Taipei • 2019 – 2020</span></div>
+          <ul>
+            <li>Prototyped marketing microsites and A/B tests; improved CTR by 9%.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Projects</h2>
+        <div class="job">
+          <div class="title"><a class="inline" href="https://github.com/your-handle/ui-kit" target="_blank" rel="noopener">Open-Source UI Kit</a> <span class="muted">• TypeScript, Storybook</span></div>
+          <div class="muted">Reusable, accessible components with 2k+ weekly downloads. Set up visual regression tests and tokens for theming.</div>
+        </div>
+
+        <div class="job">
+          <div class="title"><a class="inline" href="https://yourname.dev" target="_blank" rel="noopener">Personal Portfolio</a> <span class="muted">• Next.js, MDX</span></div>
+          <div class="muted">Showcases case studies and writing; Lighthouse 100/100/100/100.</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Education</h2>
+        <div class="job">
+          <div class="title">B.S. in Computer Science <span class="muted">— Asia University • Taichung • 2016 – 2020</span></div>
+          <div class="muted">Graduated with Honors; Chair of Coding Club.</div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Awards</h2>
+        <div class="job">
+          <div class="title">Winner – Hackathon 2023</div>
+          <div class="muted">Best UX Solution among 120+ teams.</div>
+        </div>
+      </section>
+    </div>
+
+    <aside class="sidebar" aria-labelledby="sidebar-title">
+      <h2 id="sidebar-title">Skills & Info</h2>
+
+      <div class="section">
+        <div class="muted">Skills</div>
+        <div class="skills-list" style="margin-top:8px;">
+          <span class="chip">HTML5</span><span class="chip">CSS3 / Sass</span><span class="chip">JavaScript</span><span class="chip">TypeScript</span>
+          <span class="chip">React</span><span class="chip">Node.js</span><span class="chip">REST / GraphQL</span><span class="chip">Git / GitHub</span><span class="chip">Unit Testing</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3 style="margin:0 0 6px 0;font-size:13px;color:var(--muted);">Certifications</h3>
+        <div class="cert-list">
+          <div><strong>Certified Web Professional</strong><div class="muted">WebCert Institute • 2023</div></div>
+        </div>
+        <div style="margin-top:8px;">
+          <div><strong>Google Analytics IQ</strong><div class="muted">Google • 2022</div></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3 style="margin:0 0 6px 0;font-size:13px;color:var(--muted);">Languages</h3>
+        <div class="lang-list">
+          <span class="chip">English — Native</span>
+          <span class="chip">Mandarin — Professional</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3 style="margin:0 0 6px 0;font-size:13px;color:var(--muted);">Interests</h3>
+        <div class="interests-list">
+          <span class="chip">🏃‍♂️ Running</span>
+          <span class="chip">☕ Coffee</span>
+          <span class="chip">🎮 Games</span>
+          <span class="chip">📷 Photography</span>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+
+  <!-- small helper: replace placeholders with real links or an image if desired -->
+  <script>
+    // If you have a profile picture stored with a relative path (photo.jpg) 
+    // uncomment and adjust below to show it:
+    /*
+    const photo = document.querySelector('.photo');
+    const img = document.createElement('img');
+    img.src = './photo.jpg';
+    img.alt = 'Profile photo';
+    img.style.width='100%';
+    img.style.height='100%';
+    img.style.objectFit='cover';
+    photo.innerHTML='';
+    photo.appendChild(img);
+    */
+  </script>
+</body>
+</html>
